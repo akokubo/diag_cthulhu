@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>結果 | クトゥルフ診断</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/custom.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="./android-chrome-256x256.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Counter">
+<meta name="theme-color" content="#87b2ff">
+
+<link rel="manifest" href="manifest.json">
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').then((reg) => console.log('Service worker registered.', reg));
+  }
+</script>
+  </head>
+  <body data-bs-theme="dark">
+
+    <!-- ホームへ戻る -->
+    <div class="modal fade" id="homeModal" tabindex="-1" aria-labelledby="homeModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="homeModalLabel">ホームへ戻る</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>クトゥルフ診断を中断し、記録を消して最初に戻るには以下をクリックしてください。</p>
+            <p><a class="btn btn-success btn-lg" href="./">記録を消して最初に戻る</a></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- クトゥルフ診断について -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="aboutModalLabel">クトゥルフ診断について</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>《クトゥルフ神話》は、H. P. ラブクラフトらが創作した宇宙的恐怖の物語のシリーズです。</p>
+            <p>この診断は《クトゥルフ神話》を参考に、八戸工業大学工学部工学科システム情報工学コースの小久保研究室が開発しました。</p>
+            <p>使用しているイラストは<a href="https://www.irasutoya.com/">「いらすとや」</a>のものです(このリンクをクリックするとクトゥルフ診断を中断し、八戸工業大学のWebサイトに移動します)。</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 八戸工業大学 -->
+    <div class="modal fade" id="jscprModal" tabindex="-1" aria-labelledby="jscprModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="jscprModalLabel">八戸工業大学</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>八戸工業大学については、八戸工業大学のWebサイトをご覧ください。</p>
+            <p>八戸工業大学のWebサイトは <a href="http://www.hi-tech.ac.jp/">http://www.hi-tech.ac.jp/</a> です。<br>
+            ※このリンクをクリックするとクトゥルフ診断を中断し、八戸工業大学のWebサイトに移動します。</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- お問い合わせ -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="contactModalLabel">お問い合わせ</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>この「クトゥルフ診断」を開発したのは八戸工業大学工学部工学科システム情報工学コースの小久保研究室です。</p>
+            <p>小久保研究室へのお問い合わせは、メール kokuboアットhi-tech.ac.jp です(「アット」を「@」に読み替えてください)。</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- プライバシー・ポリシー -->
+    <div class="modal fade" id="privacyPolicyModal" tabindex="-1" aria-labelledby="privacyPolicyModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="privacyPolicyModalLabel">プライバシー・ポリシー</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p></p>
+            <p>クトゥルフ診断の回答データは、ブラウザに保存されます。ブラウザを終了するか最初のページに戻ると、データがブラウザから削除されます。</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<header>
+  <nav class="navbar navbar-expand-md">
+    <div class="container">
+      <!-- ロゴとアプリ名 -->
+      <a class="navbar-brand" href="./">
+        <img id="logo" src="./icon-192x192.png" alt="logo" class="img-fluid rounded-circle">
+        <span class="app-name">クトゥルフ診断</span>
+      </a>
+
+      <!-- ハンバーガーアイコン -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- ナビゲーションメニュー -->
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">アプリについて</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+    <main class="mt-2">
+      <div class="container card px-4 py-3">
+        <h1 id="title">結果</h1>
+        <p class="fs-4"></p>
+        
+          <h1 id="cthulhu"></h1>
+<div class="row">
+  <div class="inner-card col-md-8 mb-2">
+    <p id="lead" class="fs-4"></p>
+    <p id="description" class="fs-4"></p>
+    <p><a class="btn btn-primary btn-lg" href="./">記録を消して最初に戻る</a></p>
+  </div>
+  <div class="col-md-4">
+    <figure class="figure">
+      <img id="picture" src="images/lovecraft.png" class="rounded mx-autofigure-img img-fluid rounded" alt="ラブクラフト">
+    </figure>
+  </div>
+</div>
+
+<script src="./js/result.js"></script>
+        
+      </div>
+    </main>
+
+<footer class="footer mt-2 pt-3 pb-2 bg-body-secondary">
+  <div class="container fs-7-sm">
+    <p class="float-start">
+      <a href="#" data-bs-toggle="modal" data-bs-target="#jscprModal">八戸工業大学</a> 小久保研究室
+    </p>
+    <p class="footer-link">
+      <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal">お問い合わせ</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal">プライバシーポリシー</a>
+    </p>
+  </div>
+</footer>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

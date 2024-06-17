@@ -1,0 +1,14 @@
+<div class="form-check">
+  {% for choice in choices %}
+  <input class="btn-check" type="radio" name="{{ current }}" id="{{ current }}-{{ loop.index -1 }}" value="{{ loop.index - 1 }}">
+  <label class="btn btn-outline-primary btn-lg radio-btn m-1" for="{{ current }}-{{ loop.index - 1 }}">{{ choice }}</label>
+  {% endfor %}
+</div>
+<div class="my-3">
+  <button class="btn btn-outline-secondary btn-lg" id="submit" disabled>次へ</button>
+</div>
+
+<script>const nameValue = '{{ current }}';</script>
+<script>const nextValue = '{{ next }}';</script>    
+
+<script src="./js/radio.js"></script>

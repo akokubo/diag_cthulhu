@@ -1,0 +1,150 @@
+@charset "utf-8";
+
+body {
+  background-color: #213121;
+  color: white;
+}
+
+/* ヘッダー */
+header {
+  border: 5px solid white;
+  border-radius: 10px;
+  background-color: #442810;
+  color: #eedf4a;
+}
+
+header .navbar a,
+header .navbar a:hover {
+  color: #eedf4a;
+}
+
+#logo {
+  width: 2em;
+  border: 2px solid crimson;
+  background-color: lightgray;
+}
+
+.nav-item {
+  border-top: 1px solid #eedf4a;
+}
+
+/* ハンバーガーアイコンの枠 */
+.navbar-toggler {
+  border-color: #eedf4a;
+}
+
+/* ハンバーガーアイコン自体 */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28228, 223, 74, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* メイン */
+main {
+  background-color: #213121;
+}
+
+/* フッター */
+footer {
+  border: 5px solid white;
+  border-radius: 10px;
+  background-color: #442810;
+  color: #eedf4a;
+  height: 70px;
+}
+
+footer a {
+  color: #eedf4a;
+}
+
+.footer-link {
+  display: none;
+}
+
+/* カードの枠線を濃く */
+.card {
+  border: 3px solid white;
+  background-color: #4a7d52;
+  color: white;
+}
+
+/* カードの内側のカード */
+.inner-card {
+  background-color: rgb(230, 230, 230);
+  border: 5px solid white;
+  border-radius: 10px;
+  padding: 10px 20px 0;
+  color: black;
+}
+
+/* 選択肢のラベルの先頭に「○ 」 */
+input[type="radio"] + label::before {
+  content: "○ ";
+}
+
+/* 選んだ選択肢のラベルの先頭に「◉ 」 */
+input[type="radio"]:checked + label::before {
+  content: "◉ ";
+}
+
+button#next {
+  background-color: #0d6efd;
+  color: white;
+}
+
+button#next:disabled {
+  background-color: white;
+  border-color: #0d6efd;
+  color: #0d6efd;
+}
+
+.form-check {
+  padding-left: 0;
+}
+
+.form-check label.btn.btn-outline-primary {
+  background-color: white;
+}
+
+.form-check label.btn.btn-outline-primary:hover {
+  background-color: #0d6efd;
+  color: white;
+}
+
+input[type="radio"]:checked + label.btn.btn-outline-primary {
+  background-color: #0d6efd;
+  border: 1px solid white;
+}
+
+#submit {
+  background-color: #ffc107;
+}
+
+#submit:disabled {
+  background-color: white;
+  opacity: 40%;
+}
+
+button.btn {
+  border: 1px solid black;
+}
+
+figure {
+  background-color: darkslategrey;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+figcaption.figure-caption {
+    color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-item {
+    border-top: none;
+  }
+  
+  .footer-link {
+    display: block;
+    float: right;
+  }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ full_title }}</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/custom.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="./android-chrome-256x256.png">
+    {% include "templates/_pwa.html" %}
+  </head>
+  <body data-bs-theme="dark">
+
+{% include "templates/_modal.html" %}
+
+{% include "templates/_header.html" %}
+
+    <main class="mt-2">
+      <div class="container card px-4 py-3">
+        <h1 id="title">{{ name }}</h1>
+        <p class="fs-4">{{ header }}</p>
+        {% if type == 'index' %}
+          {% include "templates/_index.html" %}
+        {% elif type == 'result' %}
+          {% include "templates/_result.html" %}
+        {% elif type == 'radio' %}
+          {% include "templates/_radio.html" %}
+        {% endif %}
+      </div>
+    </main>
+
+{% include "templates/_footer.html" %}
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
